@@ -1,0 +1,204 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.page-header p { color: var(--gray-500); font-size: 14px; }
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 220px;
+}
+
+.search-box svg { color: var(--gray-400); flex-shrink: 0; }
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--gray-700);
+  width: 100%;
+  font-family: inherit;
+}
+
+.search-box input::placeholder { color: var(--gray-400); }
+
+.table-loading {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+.empty-cell {
+  text-align: center;
+  color: var(--gray-400);
+  padding: 48px !important;
+  font-size: 14px;
+}
+
+.code-badge {
+  background: #e0e7ff;
+  color: var(--primary);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.location-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gray-600);
+  font-size: 13px;
+}
+
+.action-btns { display: flex; gap: 6px; }
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn.edit { background: #e0e7ff; color: var(--primary); }
+.icon-btn.edit:hover { background: var(--primary); color: white; }
+.icon-btn.delete { background: #fee2e2; color: var(--danger); }
+.icon-btn.delete:hover { background: var(--danger); color: white; }
+.icon-btn.view { background: #d1fae5; color: var(--success); }
+.icon-btn.view:hover { background: var(--success); color: white; }
+
+/* Modal form */
+.modal-form { display: flex; flex-direction: column; gap: 16px; }
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 14px;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  transition: all 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+}
+
+.form-group input:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Ticket / Bill display */
+.ticket-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+.ticket-title { font-size: 18px; font-weight: 800; }
+.ticket-subtitle { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+}
+
+.ticket-row:last-child { border-bottom: none; }
+.ticket-label { color: rgba(255,255,255,0.5); }
+.ticket-value { font-weight: 600; }
+.ticket-total { font-size: 20px; font-weight: 800; color: #34d399; }
+
+/* Filters row */
+.filters-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--gray-700);
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus { border-color: var(--primary); }
+
+@media (max-width: 640px) {
+  .form-row-2 { grid-template-columns: 1fr; }
+  .filters-row { flex-direction: column; align-items: stretch; }
+}
